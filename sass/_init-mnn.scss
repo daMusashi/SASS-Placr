@@ -1,0 +1,46 @@
+$darkBgColor: #846f63; // brun
+$lightBgColor: #a7d2e1; // ljusblå
+$navBgColor: #444;
+$footerBgColor: green;
+$bottomBgColor: yellow;
+$textColorHeader: #c9a896;
+
+// länkar
+$mainLinkColor: #307535;
+$headerHoverLinkColor: $lightBgColor;
+
+$headerLeadningFactor: 1; // x * fontsize som leading
+$headerTrailingFactor: 0.3; // x * fontsize som trailing
+
+@mixin rightcol-background-stripe {
+	//background-color: #846f63;
+	background-image: url(../images/background-stripe.jpg);
+	background-repeat: repeat-y;
+	background-position: 0px 0px;
+}
+
+@mixin rightcol-background-stripe-padding {
+	padding-left: 8px; // för stripe
+}
+
+@mixin rightcol-container {
+	padding-top: 1px; // kollapsande margins
+	padding-bottom: 1px; // kollapsande margins
+}
+
+@mixin debugBackground() {
+	margin: -1px;
+	border: 1px solid #F00;
+}
+
+@mixin h1Whitespace {
+	line-height: $h1-font-size;
+	margin-top: $headerLeadningFactor * $h1-font-size;
+	margin-bottom: $headerTrailingFactor * $h1-font-size;
+}
+
+@mixin h2Whitespace {
+	line-height: $h2-font-size;
+	margin-top: $headerLeadningFactor * $h2-font-size;
+	margin-bottom: $headerTrailingFactor * $h2-font-size;
+}

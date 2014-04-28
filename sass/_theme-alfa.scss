@@ -1,0 +1,89 @@
+
+body {
+	background-color: $darkBgColor;
+}
+
+#main {
+	@include rightcol-background-stripe();
+}
+#main-inner {
+	@include rightcol-background-stripe-padding();
+}
+
+#header {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	padding-top: 130px; // skapa plats för absolut-logo (h120)
+	text-align: right;
+		
+	a.logo {
+		position: absolute;
+		top: 0px;
+		right: -35px;
+	}
+	
+	.block {
+		@include debugBackground();
+		max-width: 200px;
+		color: $textColorHeader;
+		margin-left: auto;
+		margin-right: 8px;
+		
+		
+		h2 {
+			@include h2Whitespace();
+		}
+		
+		ul {
+			list-style-type: none;
+			
+			a {
+				font-weight: bold;
+				color: #FFF;
+				text-decoration: none;
+			}
+			a:hover {
+				color: $headerHoverLinkColor;
+			}
+		}
+	}
+}
+
+
+
+#navigation, #content, #footer, .region-bottom {
+	
+}
+
+#navigation {
+	@include rightcol-container();
+	background-color: $navBgColor;
+	
+	#block-system-main-menu {
+		float: left;
+	}
+	
+	#block-search-form {
+		float: right;
+	}
+}
+
+#content {
+	@include rightcol-container();
+	background-color: $lightBgColor;
+	
+}
+
+#footer {
+	@include rightcol-container();
+	background-color: $footerBgColor;
+}
+
+.region-bottom {
+	@include rightcol-container();
+	background-color: $bottomBgColor;
+}
+
+
+

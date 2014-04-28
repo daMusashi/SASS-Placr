@@ -70,6 +70,95 @@ $h6-font-size: 0.67 * $base-font-size;
 // monospace) hints at what type of font to use if the web browser doesn't
 // find any of the fonts in the list.
 
+/**
+ * Base
+ *
+ * Instead of relying on the fonts that are available on a user's computer, you
+ * can use web fonts which, like images, are resources downloaded to the user's
+ * browser. Because of the bandwidth and rendering resources required, web fonts
+ * should be used with care.
+ *
+ * Numerous resources for web fonts can be found on Google. Here are a few
+ * websites where you can find Open Source fonts to download:
+ * - http://www.fontsquirrel.com/fontface
+ * - http://www.theleagueofmoveabletype.com
+ *
+ * In order to use these fonts, you will need to convert them into formats
+ * suitable for web fonts. We recommend the free-to-use Font Squirrel's
+ * Font-Face Generator:
+ *   http://www.fontsquirrel.com/fontface/generator
+ *
+ * The following is an example @font-face declaration. This font can then be
+ * used in any ruleset using a property like this:  font-family: Example, serif;
+ *
+ * Since we're using Sass, you'll need to declare your font faces here, then you
+ * can add them to the font variables in the _base.scss partial.
+ */
+/*
+@font-face {
+  font-family: 'Example';
+  src: url('../fonts/example.eot');
+  src: url('../fonts/example.eot?iefix') format('eot'),
+    url('../fonts/example.woff') format('woff'),
+    url('../fonts/example.ttf') format('truetype'),
+    url('../fonts/example.svg#webfontOkOndcij') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+
+@font-face
+{
+	font-family: Sansation;
+	font-weight: normal;
+  	font-style: normal;
+	src: url(../fonts/sansation_regular-webfont.eot);
+	
+}
+@font-face
+{
+	font-family: Sansation;
+	font-weight: bold;
+  	font-style: normal;
+	src: url(../fonts/sansation_bold-webfont.eot);
+	
+}
+@font-face
+{
+	font-family: Sansation;
+	font-weight: normal;
+  	font-style: italic;
+	src: url(../fonts/sansation_italic-webfont.eot);
+	
+}
+@font-face
+{
+	font-family: Sansation;
+	font-weight: bold;
+  	font-style: italic;
+	src: url(../fonts/sansation_bold_italic-webfont.eot);
+	
+}
+@font-face
+{
+	font-family: Basefont;
+	font-weight: normal;
+  	font-style: normal;
+	src: url(../fonts/abeezee-regular-webfont.eot);
+	
+}
+@font-face
+{
+	font-family: Basefont;
+	font-weight: normal;
+  	font-style: italic;
+	src: url(../fonts/abeezee-italic-webfont.eot);
+	
+}
+
+$placr-body-fonts: Basefont, Tahoma, Verdana, "DejaVu Sans", sans-serif;
+$placr-heading-fonts: Sansation,  'Helvetica Neue', Helvetica, Verdana, sans-serif;;
+
 // First, let's create some font stacks.
 $times-new-roman: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
 $times:           Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
@@ -85,8 +174,8 @@ $arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
 $courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 
 // Now create some variables for the font stacks we want to use on this site.
-$base-font-family: $verdana; // The font family set on the html element.
-$font-body:        $verdana;
+$base-font-family: $placr-body-fonts;
+$font-body:        $placr-body-fonts;
 $font-monospace:   $courier;
 
 
