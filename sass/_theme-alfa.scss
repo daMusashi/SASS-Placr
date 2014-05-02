@@ -1,27 +1,65 @@
+h1, h2 {
+	font-family: "Lobster";
+	font-style: italic;
+}
 
 body {
-	background-color: $darkBgColor;
+	//background-color: $darkBgColor;
+	background-color: #2D3238;
+	background-attachment: fixed;
+	background-image: url(../images/background-content.jpg);
+	background-repeat: no-repeat;
 }
 
 #main {
 	@include rightcol-background-stripe();
+	@include safeTransparentBgColor($mainBgColor, $mainBgColorAlfa);
+	position: relative;
+	left: 0px;
+	top: 0px;
 }
 #main-inner {
 	@include rightcol-background-stripe-padding();
 }
 
 #header {
+	@include safeTransparentBgColor($headerBgColor, $headerBgColorAlfa);
 	position: relative;
 	top: 0px;
 	left: 0px;
-	padding-top: 130px; // skapa plats för absolut-logo (h120)
+	padding-top: $siteLogoWidth; // FLYTTA till passande quiery RESPONSIVE
 	text-align: right;
+	
+	#header-logo-block {
+		margin: 0px;
+		background-color: $navBgColor;
+		position: fixed; // FLYTTA till passande quiery RESPONSIVE
+		top: 0px; // FLYTTA till passande quiery RESPONSIVE
+		left: 0px; // FLYTTA till passande quiery RESPONSIVE
+		z-index: 99; // FLYTTA till passande quiery RESPONSIVE
+		width: 25%; 
 		
-	a.logo {
-		position: absolute;
-		top: 0px;
-		right: -35px;
+		.logo-container {
+			position: relative; // FLYTTA till passande quiery RESPONSIVE
+			top: 0px; // FLYTTA till passande quiery RESPONSIVE
+			right: -$siteLogoOverlap; // FLYTTA till passande quiery RESPONSIVE
+			z-index: 210; // FLYTTA till passande quiery RESPONSIVE
+			
+			a.logo {
+		
+			}
+		}
+		
+		.site-slogan {
+			margin-bottom: 20px;
+			font-style: italic;
+			font-weight: bold;
+			font-family: "Lobster";
+			text-align: left;
+		}
 	}
+		
+	
 	
 	.block {
 		@include debugBackground();
@@ -57,11 +95,40 @@ body {
 }
 
 #navigation {
-	@include rightcol-container();
+	//@include rightcol-container();
 	background-color: $navBgColor;
 	
-	#block-system-main-menu {
-		float: left;
+	position: fixed; // FLYTTA till passande quiery RESPONSIVE
+	left: 0%; // FLYTTA till passande quiery RESPONSIVE
+	top: 0%; // FLYTTA till passande quiery RESPONSIVE
+	width: 100%; // FLYTTA till passande quiery RESPONSIVE
+	z-index: 49; // FLYTTA till passande quiery RESPONSIVE
+	
+	.region-navigation {
+		width: 75%;
+		margin-left: 25%;
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	
+		#block-system-main-menu {
+			float: left;
+			padding-left: $siteLogoOverlap + ($siteLogoOverlap / 2);
+		
+			.menu {
+				list-style-type: none;
+			
+				li {
+					display: inline-block;
+					margin-right: 25px;
+				
+					a {
+						font-weight: bold;
+						color: #FFF;
+						text-decoration: none;
+					}
+				}
+			}
+		}
 	}
 	
 	#block-search-form {
@@ -71,7 +138,67 @@ body {
 
 #content {
 	@include rightcol-container();
-	background-color: $lightBgColor;
+	
+	//background-color: $lightBgColor;
+	//background-color: #2D3238;
+
+	
+	.meassges {
+		margin: 10px;
+		padding: 10px;
+		color: #FFF;
+		text-decoration: none;
+		background-color: #39F;
+		border: 2px solid #FFF;
+	}
+	
+	div.node-teaser {
+		background-color: #FFF;
+		padding: $teaserBoxPadding;
+		display: inline-block;
+		vertical-align: top;
+		width: $teaserContentWidth;
+		position: relative;
+		left: 0px;
+		top: 0px;
+		
+		h2 {
+			position: absolute;
+			left: $teaserBoxPadding;
+			top: $teaserBoxPadding;
+			margin: 0px;
+			
+			
+			a {
+				background-color: rgba(0, 0, 0, 0.7);
+				width: $teaserContentWidth - (2*$teaserHeadningPadding);
+				padding: $teaserHeadningPadding;
+				color: #fff;
+				display: block;
+				text-decoration: none;
+			}
+		}
+		
+		p {
+			font-size: 0.8em;
+			line-height: 1.2em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+		}
+		
+		.group-right > div {
+			padding-left: $teaserDescriptionPadding;
+			
+			.field-name-field-platsnamn {
+				font-weight: bold;
+			}
+		}
+		
+		.field-name-field-platsnamn {
+			font-weight: bold;
+		}
+
+	}
 	
 }
 

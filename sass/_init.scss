@@ -107,54 +107,7 @@ $h6-font-size: 0.67 * $base-font-size;
 }
 */
 
-@font-face
-{
-	font-family: Sansation;
-	font-weight: normal;
-  	font-style: normal;
-	src: url(../fonts/sansation_regular-webfont.eot);
-	
-}
-@font-face
-{
-	font-family: Sansation;
-	font-weight: bold;
-  	font-style: normal;
-	src: url(../fonts/sansation_bold-webfont.eot);
-	
-}
-@font-face
-{
-	font-family: Sansation;
-	font-weight: normal;
-  	font-style: italic;
-	src: url(../fonts/sansation_italic-webfont.eot);
-	
-}
-@font-face
-{
-	font-family: Sansation;
-	font-weight: bold;
-  	font-style: italic;
-	src: url(../fonts/sansation_bold_italic-webfont.eot);
-	
-}
-@font-face
-{
-	font-family: Basefont;
-	font-weight: normal;
-  	font-style: normal;
-	src: url(../fonts/abeezee-regular-webfont.eot);
-	
-}
-@font-face
-{
-	font-family: Basefont;
-	font-weight: normal;
-  	font-style: italic;
-	src: url(../fonts/abeezee-italic-webfont.eot);
-	
-}
+@import "font-faces-mnn";
 
 $placr-body-fonts: Basefont, Tahoma, Verdana, "DejaVu Sans", sans-serif;
 $placr-heading-fonts: Sansation,  'Helvetica Neue', Helvetica, Verdana, sans-serif;;

@@ -1,7 +1,35 @@
-#content .node-teaser {
-	display: inline-block;
-	width: 400px;
+body.node-type-plats .field-type-getlocations-map {
+	margin: 0px;
 }
 
+body.node-type-plats .group-left {
+	padding: $nodePlatsLeftColPadding;
+	background-color: $nodePlatsDescBgColor;
+}
+
+body.node-type-plats .group-right {
+	padding: $nodePlatsRightColPadding;
+	background-color: $nodePlatsRightColBgColor;
+	color: #ccc;
+	
+	.field-label {
+		font-size: $h2-font-size;
+	}
+	
+	
+	.field {
+		//clear: both; // om float istället för inline-block
+		margin-bottom: $h2-font-size;
+	}
+	
+	.field-name-field-bilder .field-item {
+		display: inline-block;
+	}
+	
+	.field-name-field-videos .field-item {
+		display: inline-block;
+	}
+	
+}
 
 

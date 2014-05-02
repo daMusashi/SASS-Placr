@@ -1,0 +1,56 @@
+// fonts & webfonts-generator med exemple-css för nedan: http://www.fontsquirrel.com/
+
+$fontDir: "../fonts/";
+
+@mixin fontFace($fontFamily, $fontFileWithoutExtension, $fontWeight, $fontStyle, $svgID){
+	/* (vad som bör vara) cross-browser kombatibel font-face */
+	// Använd http://www.fontsquirrel.com/ för att hitta och generera
+	
+	// mall
+	// @font-face {
+  	// 		font-family: 'Example';
+  	// 		src: url('../fonts/example.eot');
+  	// 		src: url('../fonts/example.eot?iefix') format('eot'),
+    // 			url('../fonts/example.woff') format('woff'),
+    // 			url('../fonts/example.ttf') format('truetype'),
+    // 			url('../fonts/example.svg#webfontOkOndcij') format('svg');
+  	// 		font-weight: normal;
+  	//		font-style: normal;
+	// 	}
+	
+	$fileName: $fontDir + $fontFileWithoutExtension;
+	$sourcePrefix: "url('" + $fileName;
+	
+	$srcA: $sourcePrefix + ".oet')";
+	
+	$srcB1: $sourcePrefix + ".eot?#iefix') format('embedded-opentype'), ";
+	$srcB2: $sourcePrefix + ".woff') format('woff'), ";
+	$srcB3: $sourcePrefix + ".ttf') format('truetype'), ";
+	$srcB4: $sourcePrefix + ".svg#" + $svgID + "') format('svg')";
+	$srcB: $srcB1 + $srcB2 + $srcB3 + $srcB4;
+	
+	@font-face {
+    	font-family: $fontFamily;
+    	src: #{$srcA};
+    	src: #{$srcB};
+    	font-weight: #{$fontWeight};
+    	font-style: #{$fontStyle};
+	}
+}
+
+// Basefont
+@include fontFace("Basefont", "sansation_bold-webfont", "bold", "normal", "sansationbold");
+@include fontFace("Basefont", "sansation_bold_italic-webfont", "bold", "italic", "sansationbold_italic");
+@include fontFace("Basefont", "sansation_italic-webfont", "normal", "italic", "sansationitalic");
+@include fontFace("Basefont", "sansation_light-webfont", "lighter", "normal", "sansation_lightregular");
+@include fontFace("Basefont", "sansation_light_italic-webfont", "lighter", "italic", "sansation_lightitalic");
+@include fontFace("Basefont", "ansation_regular-webfont", "normal", "normal", "sansationregular");
+
+// Headning-font
+@include fontFace("Lobster", "lobstertwo-bold-webfont", "bold", "normal", "lobster_twobold");
+@include fontFace("Lobster", "lobstertwo-bolditalic-webfont", "bold", "italic", "lobster_twobold_italic");
+@include fontFace("Lobster", "lobstertwo-italic-webfont", "normal", "italic", "lobster_twoitalic");
+@include fontFace("Lobster", "lobstertwo-regular-webfont", "normal", "normal", "lobster_tworegular");
+
+
+
