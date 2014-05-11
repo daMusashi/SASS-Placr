@@ -33,17 +33,9 @@ body {
 	#header-logo-block {
 		margin: 0px;
 		background-color: $navBgColor;
-		position: fixed; // FLYTTA till passande quiery RESPONSIVE
-		top: 0px; // FLYTTA till passande quiery RESPONSIVE
-		left: 0px; // FLYTTA till passande quiery RESPONSIVE
-		z-index: 99; // FLYTTA till passande quiery RESPONSIVE
-		width: 25%; 
 		
 		.logo-container {
-			position: relative; // FLYTTA till passande quiery RESPONSIVE
-			top: 0px; // FLYTTA till passande quiery RESPONSIVE
-			right: -$siteLogoOverlap; // FLYTTA till passande quiery RESPONSIVE
-			z-index: 210; // FLYTTA till passande quiery RESPONSIVE
+			
 			
 			a.logo {
 		
@@ -95,24 +87,15 @@ body {
 }
 
 #navigation {
-	//@include rightcol-container();
 	background-color: $navBgColor;
 	
-	position: fixed; // FLYTTA till passande quiery RESPONSIVE
-	left: 0%; // FLYTTA till passande quiery RESPONSIVE
-	top: 0%; // FLYTTA till passande quiery RESPONSIVE
-	width: 100%; // FLYTTA till passande quiery RESPONSIVE
-	z-index: 49; // FLYTTA till passande quiery RESPONSIVE
-	
 	.region-navigation {
-		width: 75%;
-		margin-left: 25%;
 		padding-top: 0.5em;
 		padding-bottom: 0.5em;
 	
 		#block-system-main-menu {
 			float: left;
-			padding-left: $siteLogoOverlap + ($siteLogoOverlap / 2);
+			
 		
 			.menu {
 				list-style-type: none;
@@ -137,7 +120,7 @@ body {
 }
 
 #content {
-	@include rightcol-container();
+	//@include rightcol-container();
 	
 	//background-color: $lightBgColor;
 	//background-color: #2D3238;
@@ -153,14 +136,20 @@ body {
 	}
 	
 	div.node-teaser {
-		background-color: #FFF;
-		padding: $teaserBoxPadding;
-		display: inline-block;
-		vertical-align: top;
-		width: $teaserContentWidth;
+		float: left;
+		background-color: $teaserBorderColor;
+		padding-left: $teaserBoxBorderWidth;
+		padding-bottom: $teaserBoxBorderWidth;
+		margin: $teaserBoxMargin;
 		position: relative;
 		left: 0px;
 		top: 0px;
+		
+		.inner {
+			background-color: $teaserBodyColor;
+			padding: $teaserBoxPadding;
+		}
+		
 		
 		h2 {
 			position: absolute;
@@ -171,7 +160,7 @@ body {
 			
 			a {
 				background-color: rgba(0, 0, 0, 0.7);
-				width: $teaserContentWidth - (2*$teaserHeadningPadding);
+				width: 100%;
 				padding: $teaserHeadningPadding;
 				color: #fff;
 				display: block;
@@ -180,14 +169,20 @@ body {
 		}
 		
 		p {
-			font-size: 0.8em;
-			line-height: 1.2em;
 			margin-top: 0.3em;
 			margin-bottom: 0.3em;
 		}
 		
-		.group-right > div {
-			padding-left: $teaserDescriptionPadding;
+		.group-left {
+			float: left;
+		}
+		
+		.group-right {
+			float: left;
+			
+			.inner {
+				padding-left: $teaserDescriptionPadding;
+			}
 			
 			.field-name-field-platsnamn {
 				font-weight: bold;
@@ -197,19 +192,25 @@ body {
 		.field-name-field-platsnamn {
 			font-weight: bold;
 		}
+		
+		.group-footer {
+			clear: both;
+		}
 
 	}
 	
 }
 
 #footer {
-	@include rightcol-container();
+	//@include rightcol-container();
 	background-color: $footerBgColor;
+	clear: both;
 }
 
 .region-bottom {
-	@include rightcol-container();
+	//@include rightcol-container();
 	background-color: $bottomBgColor;
+	clear: both;
 }
 
 

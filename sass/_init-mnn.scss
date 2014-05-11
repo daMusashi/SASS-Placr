@@ -1,8 +1,25 @@
+// VIKTIGA STORLEKAR
+$headerAsSidebarBoxBigWidth: 200px;
+$headerAsSidebarBoxSmallWidth: 160px;
+$youTubeThumbWidth: 220px;
+
+// plats
+$platsMainBild: 400px;
+$nodePlatsHeadingImageWidth: 400px;
+$platFullColLeftMinBoxWidth: 320px;
+$platFullColLeftMinPadding: 4px;
+$platFullColRightMinPadding: 2px;
+$platFullColLeftFluidPadding: 1%;
+$platFullColRightFluidPadding: 1%;
+
+// färger
 $headerBgColor: #846f63; // brun
 $headerBgColorAlfa: 0.6;
 $navBgColor: #222; // mörkgrå
 $mainBgColor: $navBgColor; 
-$mainBgColorAlfa: 0.8; 
+$mainBgColorAlfa: 0.8;
+$teaserBorderColor: $navBgColor;
+$teaserBodyColor: #fff;
 
 
 $lightBgColor: #a7d2e1; // ljusblå
@@ -11,7 +28,6 @@ $footerBgColor: green;
 $bottomBgColor: yellow;
 $textColorHeader: #c9a896;
 
-$youTubeThumbWidth: 220px;
 
 // site logo
 $siteLogoWidth: 170px;
@@ -23,17 +39,19 @@ $mainLinkColor: #307535;
 $headerHoverLinkColor: $lightBgColor;
 
 // teasers
-$teaserContentWidth: 400px;
-$teaserBoxPadding: 4px;
-$teaserBoxMargin: 5px;
-$teaserBoxWidth: $teaserContentWidth + (2 * $teaserBoxPadding);
-$teaserHeadningPadding: 4px;
-$teaserDescriptionPadding: 4px;
+$teaserMapColWidth: 40%;
+$teaserDescColWidth: 60%;
+$teaserBoxPadding: 0%; // hänvisar till 100% av teaserns storlek
+$teaserBoxBorderWidth: 0% ; // procenten hänvisar till mains storlek
+$teaserHeadningPadding: $teaserBoxPadding;
+$teaserDescriptionPadding: 2%; // hänvisar till 100% av teaserns storlek - sätts om i respektive responsiv-query;
+$teaserBoxMargin: 0px;
+$teaserBoxWidth: 100%; // sätts om i respektive responsiv-query;
+$teaserContentWidth: $teaserBoxWidth - (2 * $teaserBoxPadding); // räknas om i respektive responsiv-query;
+
 
 // node-view plats
-$nodePlatsLeftColPadding: 0px;
-$nodePlatsHeadingImageWidth: 400px;
-$nodePlatsRightColPadding: 4px;
+
 
 $nodePlatsRightColWidth: $youTubeThumbWidth; // bestäms av bredd youtube video
 $nodePlatsLeftColWidth: $nodePlatsHeadingImageWidth; // bestäms av bredd huvudbild

@@ -44,7 +44,7 @@ $fontDir: "../fonts/";
 @include fontFace("Basefont", "sansation_italic-webfont", "normal", "italic", "sansationitalic");
 @include fontFace("Basefont", "sansation_light-webfont", "lighter", "normal", "sansation_lightregular");
 @include fontFace("Basefont", "sansation_light_italic-webfont", "lighter", "italic", "sansation_lightitalic");
-@include fontFace("Basefont", "ansation_regular-webfont", "normal", "normal", "sansationregular");
+@include fontFace("Basefont", "sansation_regular-webfont", "normal", "normal", "sansationregular");
 
 // Headning-font
 @include fontFace("Lobster", "lobstertwo-bold-webfont", "bold", "normal", "lobster_twobold");

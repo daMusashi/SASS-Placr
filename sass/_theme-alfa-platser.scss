@@ -1,35 +1,52 @@
-body.node-type-plats .field-type-getlocations-map {
-	margin: 0px;
-}
+body.node-type-plats .field-name-field-platsbild {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	
+	.group-header {
+		
+		h1 {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			margin: 0px;
+			background-color: rgba(255, 255, 255, 0.7);
+			width: 100%;
+			padding: 15px;
+		}
 
-body.node-type-plats .group-left {
-	padding: $nodePlatsLeftColPadding;
-	background-color: $nodePlatsDescBgColor;
-}
+		.field-type-getlocations-map {
+			margin: 0px;
+		}
+	}
 
-body.node-type-plats .group-right {
-	padding: $nodePlatsRightColPadding;
-	background-color: $nodePlatsRightColBgColor;
-	color: #ccc;
-	
-	.field-label {
-		font-size: $h2-font-size;
+	.group-left {
+		background-color: $nodePlatsDescBgColor;
 	}
+
+	.group-right {
+		background-color: $nodePlatsRightColBgColor;
+		color: #ccc;
+	
+		.field-label {
+			font-size: $h2-font-size;
+		}
 	
 	
-	.field {
-		//clear: both; // om float istället för inline-block
-		margin-bottom: $h2-font-size;
+		.field {
+			//clear: both; // om float istället för inline-block
+			margin-bottom: $h2-font-size;
+		}
+	
+		.field-name-field-bilder .field-item {
+			display: inline-block;
+		}
+	
+		.field-name-field-videos .field-item {
+			display: inline-block;
+		}
+	
 	}
-	
-	.field-name-field-bilder .field-item {
-		display: inline-block;
-	}
-	
-	.field-name-field-videos .field-item {
-		display: inline-block;
-	}
-	
 }
 
 
